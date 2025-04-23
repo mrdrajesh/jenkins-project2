@@ -1,16 +1,4 @@
 pipeline {
-    stage('Checkout') {
-          branches: [[name: '*/main']]
-        ])
-        sh 'echo "After Checkout:" && ls -la'
-      }
-      }
-      steps {
-
-    stage('Build and Push Docker Image') {
-      environment {
-            def dockerImage = docker.image("${DOCKER_IMAGE}")
-pipeline {
   agent {
     docker {
       image 'mrdrajesh/maven-abhishek-docker-agent:v2'
